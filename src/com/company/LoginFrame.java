@@ -56,7 +56,7 @@ public class LoginFrame extends JFrame implements ActionListener {
                 //while (r.next()) {
                     if(r.next())
                     {
-                        new PreHomeScreen().setVisible(true);
+                        new DashBoard().setVisible(true);
                         this.setVisible(false);
                     }
                     else{
