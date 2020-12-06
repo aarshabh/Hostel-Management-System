@@ -21,7 +21,7 @@ public class DashBoard extends JFrame implements ActionListener {
         mb = new JMenuBar();
         add(mb);
 
-        m1 = new JMenu("HOSTEL MANAGEMENT SYSTEM");
+        m1 = new JMenu("HOSTEL MANAGEMENT");
         m1.setForeground(Color.darkGray);
         mb.add(m1);
 
@@ -62,13 +62,14 @@ public class DashBoard extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae){
             if(ae.getActionCommand().equals("WARDEN DETAILS")){
-
+                new WardenDetails().setVisible(true);
+                this.setVisible(false);
             }else if(ae.getActionCommand().equals("ADD STUDENT")){
                 new AddStudent().setVisible(true);
             }
     }
 
-    public static void main(String[]args){
+    /*public static void main(String[]args){
         new DashBoard().setVisible(true);
-    }
+    }*/
 }
