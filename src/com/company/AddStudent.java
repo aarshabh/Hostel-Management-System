@@ -180,7 +180,7 @@ public class AddStudent extends JFrame implements ActionListener {
         String d=(String)dd.getSelectedItem();
         String mon=(String)mm.getSelectedItem();
         String y=(String)yyyy.getSelectedItem();
-        String dob = d + mon + y;
+        //String dob = d + mon + y;
 
         conn c = new conn();
         String str= "insert into student value('"+t1+"','"+t2+"','"+branch+"','"+gender+"','"+d+"','"+mon+"','"+y+"','"+t3+"','"+t4+"')";
