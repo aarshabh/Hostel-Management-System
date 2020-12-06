@@ -39,23 +39,25 @@ public class AddStudent extends JFrame implements ActionListener {
 
 
         //adding details
-        JLabel name = new JLabel("Name");
-        name.setBounds(50,70,100,20);
-        name.setFont(new Font("",Font.PLAIN,20));
-        name.setForeground(Color.white);
-        add(name);
-        stu = new JTextField();
-        stu.setBounds(150,70,120,20);
-        add(stu);
+
 
         JLabel usn = new JLabel("USN");
-        usn.setBounds(50,120,100,20);
+        usn.setBounds(50,70,100,20);
         usn.setFont(new Font("",Font.PLAIN,20));
         usn.setForeground(Color.white);
         add(usn);
         sno=new JTextField();
-        sno.setBounds(150,120,120,20);
+        sno.setBounds(150,70,120,20);
         add(sno);
+
+        JLabel name = new JLabel("Name");
+        name.setBounds(50,120,100,20);
+        name.setFont(new Font("",Font.PLAIN,20));
+        name.setForeground(Color.white);
+        add(name);
+        stu = new JTextField();
+        stu.setBounds(150,120,120,20);
+        add(stu);
 
         JLabel branch = new JLabel("Branch");
         branch.setBounds(50,170,100,20);
@@ -162,8 +164,8 @@ public class AddStudent extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        String t1 = stu.getText();
-        String t2 = sno.getText();
+        String t2 = stu.getText();
+        String t1 = sno.getText();
         String t4 = ph.getText();
         String t3 = city.getText();
 
