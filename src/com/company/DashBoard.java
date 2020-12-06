@@ -2,8 +2,9 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class DashBoard extends JFrame {
+public class DashBoard extends JFrame implements ActionListener {
     JMenuBar mb;
     JMenu m1,m2;
 
@@ -29,32 +30,45 @@ public class DashBoard extends JFrame {
         mb.add(m2);
 
         i1 = new JMenuItem("WARDEN DETAILS");
+        i1.addActionListener(this);
         m1.add(i1);
 
-        i2 = new JMenuItem("ADD EMPLOYEE");
+        i2 = new JMenuItem("ADD STUDENT");
+        i2.addActionListener(this);
         m2.add(i2);
 
-        i3 = new JMenuItem("ADD STUDENT");
+        i3 = new JMenuItem("ADD EMPLOYEE");
+        i3.addActionListener(this);
         m2.add(i3);
 
-        i4 = new JMenuItem("MESS");
+        i4 = new JMenuItem("MESS DETAILS");
+        i4.addActionListener(this);
         m2.add(i4);
         //m2.setVisible(true);
         l.add(mb);
         mb.setBounds(0,0,1280,25);
 
         JLabel l1= new JLabel("Welcome to RNSIT Hostel");
-        l1.setBounds(436,310,400,80);
-        l1.setForeground(Color.CYAN);
-        l1.setFont(new Font("Tahoma",Font.BOLD,30));
+        l1.setBounds(436,20,400,80);
+        l1.setForeground(Color.blue);
+        l1.setFont(new Font("Tahoma",Font.PLAIN,30));
         l.add(l1);
 
         setLayout(null);
-        setBounds(140,0,1280,850);
+        setBounds(140,15,1280,800);
         setVisible(true);
 
     }
-    /*public static void main(String[]args){
+    @Override
+    public void actionPerformed(ActionEvent ae){
+            if(ae.getActionCommand().equals("WARDEN DETAILS")){
+
+            }else if(ae.getActionCommand().equals("ADD STUDENT")){
+                new AddStudent().setVisible(true);
+            }
+    }
+
+    public static void main(String[]args){
         new DashBoard().setVisible(true);
-    }*/
+    }
 }
