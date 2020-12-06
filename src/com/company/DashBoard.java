@@ -9,11 +9,11 @@ public class DashBoard extends JFrame {
 
     JMenuItem i1,i2,i3,i4;
     DashBoard(){
-        ImageIcon i = new ImageIcon(ClassLoader.getSystemResource("com/company/icons/hostel1.jpeg"));
+        ImageIcon i = new ImageIcon(ClassLoader.getSystemResource("com/company/icons/Dashboard.jpeg"));
         Image ii1 = i.getImage().getScaledInstance(1280,800,Image.SCALE_DEFAULT);
         ImageIcon ii2 = new ImageIcon(ii1);
         JLabel l= new JLabel(ii2);
-        l.setBounds(0,0,1280,800);
+        l.setBounds(0,0,1280,850);
         add(l);
 
 
@@ -34,7 +34,7 @@ public class DashBoard extends JFrame {
         i2 = new JMenuItem("ADD EMPLOYEE");
         m2.add(i2);
 
-        i3 = new JMenuItem("ADD ROOM");
+        i3 = new JMenuItem("ADD STUDENT");
         m2.add(i3);
 
         i4 = new JMenuItem("MESS");
@@ -43,18 +43,18 @@ public class DashBoard extends JFrame {
         l.add(mb);
         mb.setBounds(0,0,1280,25);
 
-        JLabel l1= new JLabel("RNSIT Hostel");
-        l1.setBounds(450,75,400,80);
-        l1.setForeground(Color.black);
-        l1.setFont(new Font("",Font.BOLD,30));
+        JLabel l1= new JLabel("Welcome to RNSIT Hostel");
+        l1.setBounds(436,310,400,80);
+        l1.setForeground(Color.CYAN);
+        l1.setFont(new Font("Tahoma",Font.BOLD,30));
         l.add(l1);
 
         setLayout(null);
-        setBounds(140,20,1280,800);
+        setBounds(140,0,1280,850);
         setVisible(true);
 
     }
-    public static void main(String[]args){
+    /*public static void main(String[]args){
         new DashBoard().setVisible(true);
-    }
+    }*/
 }
