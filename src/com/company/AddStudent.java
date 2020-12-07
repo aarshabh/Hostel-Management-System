@@ -164,10 +164,10 @@ public class AddStudent extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        String t2 = stu.getText();
         String t1 = sno.getText();
-        String t4 = ph.getText();
+        String t2 = stu.getText();
         String t3 = city.getText();
+        String t4 = ph.getText();
 
         String gender=null;
         if(m.isSelected()){
@@ -192,8 +192,6 @@ public class AddStudent extends JFrame implements ActionListener {
         }catch (Exception e){
             System.out.println(e);
         }
-
-
     }
 
     /*public static void main(String[]args){
