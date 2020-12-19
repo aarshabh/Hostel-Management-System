@@ -73,17 +73,17 @@ public class GirlsHostel extends JFrame implements ActionListener {
         ph.setBounds(390,395,120,30);
         add(ph);
 
-
-        back = new JButton("<<Back");
-        back.addActionListener(this);
-        back.setBounds(30,550,100,20);
-        add(back);
-
         add = new JButton("Add");
-        add.setBounds(335,450,100,25);
+        add.setBounds(290,450,100,25);
         add.addActionListener(this);
         add(add);
 
+        back = new JButton("Back");
+        back.setBackground(Color.BLACK);
+        back.setForeground(Color.white);
+        back.setBounds(415,450,100,25);
+        back.addActionListener(this);
+        add(back);
 
         setLayout(null);
         setBounds(330,110,850,650);
@@ -91,36 +91,9 @@ public class GirlsHostel extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae){
-        String t1 = id_no.getText();
-        String t2 = name.getText();
-        String t3 = num.getText();
-        String t4 = mail.getText();
-        String t5 = ph.getText();
 
-        String gender=null;
-
-
-        if(m.isSelected()){
-            gender="M";
-        }
-        else if(f.isSelected()){
-            gender="F";
-        }
-
-        String pro= (String) id_proof.getSelectedItem();
-
-        conn c = new conn();
-        String str= "insert into warden value('"+t1+"','"+t2+"','"+gender+"','"+pro+"','"+t3+"','"+t4+"','"+t5+"')";
-
-        try{
-            c.s.executeUpdate(str);
-            JOptionPane.showMessageDialog(null, "Detail Added");
-            this.setVisible(false);
-        }catch (Exception e){
-            System.out.println(e);
-        }
     }
-    /*public static void main(String[] args){
+    public static void main(String[] args){
         new GirlsHostel().setVisible(true);
-    }*/
+    }
 }

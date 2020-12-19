@@ -4,29 +4,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BoysHostel1 extends JFrame implements ActionListener {
+public class BoysHostel2 extends JFrame implements ActionListener {
 
     JTextField id_no,name,mail,ph,num;
-    JComboBox id_proof,hostel;
+    JComboBox id_proof;
     JRadioButton m,f;
     JButton back,add;
-    BoysHostel1(){
+    BoysHostel2(){
         JLabel id = new JLabel("College ID");
-        id.setBounds(280,120,120,30);
+        id.setBounds(280,160,120,30);
         id.setFont(new Font("",Font.PLAIN,20));
         add(id);
         id_no = new JTextField();
-        id_no.setBounds(390,125,120,20);
+        id_no.setBounds(390,165,120,20);
         add(id_no);
-
-        JLabel hos = new JLabel("Hostel");
-        hos.setBounds(280,160,120,30);
-        hos.setFont(new Font("",Font.PLAIN,20));
-        add(hos);
-        String type[] = {"Girls Hostel","Boys Hostel-1","Boys Hostel-2"};
-        hostel = new JComboBox(type);
-        hostel.setBounds(390,160,120,30);
-        add(hostel);
 
         JLabel n = new JLabel("Name");
         n.setBounds(280,200,120,30);
@@ -37,7 +28,7 @@ public class BoysHostel1 extends JFrame implements ActionListener {
         add(name);
 
         JLabel gen = new JLabel("Gender");
-        gen.setBounds(280,232,120,30);
+        gen.setBounds(280,230,120,30);
         gen.setFont(new Font("",Font.PLAIN,20));
         add(gen);
         m=new JRadioButton("M");
@@ -55,7 +46,7 @@ public class BoysHostel1 extends JFrame implements ActionListener {
         add(govt);
         String str[]= {"Aadhar Card","Pan Card","Driving License","Voter ID"};
         id_proof = new JComboBox(str);
-        id_proof.setBounds(390,270,140,30);
+        id_proof.setBounds(390,270,110,30);
         add(id_proof);
 
         JLabel number= new JLabel("ID Number");
@@ -100,42 +91,9 @@ public class BoysHostel1 extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource() == add){
 
-            String t1 = id_no.getText();
-            String t2 = name.getText();
-            String t3 = num.getText();
-            String t4 = mail.getText();
-            String t5 = ph.getText();
-
-            String gender=null;
-            if(m.isSelected()){
-                gender="M";
-            }
-            else if(f.isSelected()){
-                gender="F";
-            }
-
-            String hos = (String) hostel.getSelectedItem();
-            String pro= (String) id_proof.getSelectedItem();
-
-            conn c = new conn();
-            String str= "insert into warden value('"+t1+"','"+hos+"','"+t2+"','"+gender+"','"+pro+"','"+t3+"','"+t4+"','"+t5+"')";
-
-            try{
-                c.s.executeUpdate(str);
-                JOptionPane.showMessageDialog(null, "Detail Added");
-                this.setVisible(false);
-            }catch (Exception e){
-                System.out.println(e);
-            }
-        }
-        else if(ae.getSource() == back){
-            this.setVisible(false);
-            new DashBoard().setVisible(true);
-        }
     }
-    public static void main(String[] args){
-        new BoysHostel1().setVisible(true);
-    }
+    /*public static void main(String[] args){
+        new BoysHostel2().setVisible(true);
+    }*/
 }
